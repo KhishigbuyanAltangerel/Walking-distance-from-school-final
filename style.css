@@ -137,7 +137,7 @@ body {
     color: #5E2C5E;
 }
 
-/* Info panel styles (moved to top right) */
+/* Info panel styles */
 .map-button {
     position: absolute;
     top: 10px;
@@ -218,29 +218,29 @@ body {
 
 /* Distance polygon styles */
 .distance-5min {
-    fill-color: #FF6B6B;
-    fill-opacity: 0.7;
-    stroke: #FF6B6B;
+    fill-color: #2b83ba;
+    fill-opacity: 0.5;
+    stroke: #2b83ba;
     stroke-width: 1;
 }
 
 .distance-10min {
-    fill-color: #FFA36B;
-    fill-opacity: 0.7;
-    stroke: #FFA36B;
+    fill-color: #1a9641;
+    fill-opacity: 0.5;
+    stroke: #1a9641;
     stroke-width: 1;
 }
 
 .distance-15min {
-    fill-color: #FFD56B;
-    fill-opacity: 0.7;
-    stroke: #FFD56B;
+    fill-color: #fdae61;
+    fill-opacity: 0.5;
+    stroke: #fdae61;
     stroke-width: 1;
 }
 
 .distance-20min {
-    fill-color: #A3D8A3;
-    fill-opacity: 0.7;
-    stroke: #A3D8A3;
+    fill-color: #d7191c;
+    fill-opacity: 0.5;
+    stroke: #d7191c;
     stroke-width: 1;
 }

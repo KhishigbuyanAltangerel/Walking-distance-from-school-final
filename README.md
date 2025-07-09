@@ -7,7 +7,7 @@ A interactive map created with Leaflet.js showing walking distance zones around 
 - double click zoom in
 - layer control
 Implementation:
-// Create custom layer control panel
+
 function createLayerControlPanel() {
     const layerList = document.getElementById('layer-list');
     
@@ -43,7 +43,6 @@ function createLayerControlPanel() {
         layerList.appendChild(item);
     });
     
-    // Add overlay layers
     const overlayHeader = document.createElement('h4');
     overlayHeader.textContent = 'Layers';
     layerList.appendChild(overlayHeader);
@@ -82,17 +81,15 @@ function createLayerControlPanel() {
 Challenges: When I opened the map no layer was added to the map, I had to add it one by one by myself.
 Solution: With the help of initialize the layers to the map, 5 min distance layer and the schools appears when the map is loaded first. 
 
-// Initialize layers
 loadDistanceLayers();
 loadSchoolsLayer();
 
-// Add default visible layers
 walkingDistanceLayers["5min walk"].addTo(map);
 schoolLayer.addTo(map);
 
 - pop-up
 Implementation:
-// Load schools layer with custom icon and detailed popup
+
 function loadSchoolsLayer() {
     fetch('data/Schools_UB.geojson')
         .then(response => response.json())
@@ -152,7 +149,6 @@ Solution: I tried to solve the issue few times with the help of AI but couldn't 
 - Metadata
 Implementation:
 
-// Info panel functionality 
 const infoButton = document.getElementById('info-button');
 const infoPanel = document.getElementById('info-panel');
 const closeInfo = document.getElementById('close-info');

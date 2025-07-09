@@ -10,17 +10,12 @@ const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/servi
     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
 
-const terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-});
-
 // Add base layers to map
 osm.addTo(map);
 
 const baseLayers = {
     "Street Map": osm,
-    "Satellite": satellite,
-    "Terrain": terrain
+    "Satellite": satellite
 };
 
 // Create layer groups
@@ -47,18 +42,18 @@ function styleDistanceLayer(color) {
         fillColor: color,
         color: color,
         weight: 1,
-        opacity: 1,
-        fillOpacity: 0.7
+        opacity: 0.5,
+        fillOpacity: 0.5
     };
 }
 
 // Load walking distance layers
 function loadDistanceLayers() {
     const distanceStyles = {
-        "5min": "#FF6B6B",
-        "10min": "#FFA36B",
-        "15min": "#FFD56B",
-        "20min": "#A3D8A3"
+        "5min": "#2b83ba",
+        "10min": "#1a9641",
+        "15min": "#fdae61",
+        "20min": "#d7191c"
     };
 
     Object.keys(distanceStyles).forEach(time => {
@@ -141,9 +136,6 @@ const overlayLayers = {
     "Schools": schoolLayer
 };
 
-// Add layer control to map
-L.control.layers(baseLayers, overlayLayers).addTo(map);
-
 // Create custom layer control panel
 function createLayerControlPanel() {
     const layerList = document.getElementById('layer-list');
@@ -182,7 +174,7 @@ function createLayerControlPanel() {
     
     // Add overlay layers
     const overlayHeader = document.createElement('h4');
-    overlayHeader.textContent = 'Overlays';
+    overlayHeader.textContent = 'Layers';
     layerList.appendChild(overlayHeader);
     
     Object.keys(overlayLayers).forEach(layerName => {
@@ -222,7 +214,7 @@ createLayerControlPanel();
 // Add scale control
 L.control.scale({ position: 'bottomleft' }).addTo(map);
 
-// Info panel functionality (moved to top right)
+// Info panel functionality 
 const infoButton = document.getElementById('info-button');
 const infoPanel = document.getElementById('info-panel');
 const closeInfo = document.getElementById('close-info');
