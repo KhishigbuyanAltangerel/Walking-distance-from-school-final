@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking Distance from Schools in Ulaanbaatar</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="map-container">
+        <div id="title">
+            <h1>Walking Distance from Schools in Ulaanbaatar</h1>
+        </div>
+        <div id="map"></div>
+        <div id="legend">
+            <h3>Walking Time</h3>
+            <div><i style="background: #FF6B6B"></i>5 minutes</div>
+            <div><i style="background: #FFA36B"></i>10 minutes</div>
+            <div><i style="background: #FFD56B"></i>15 minutes</div>
+            <div><i style="background: #A3D8A3"></i>20 minutes</div>
+            <div><i class="fas fa-school" style="color: #5E2C5E"></i>Schools</div>
+        </div>
+        <div id="layer-control">
+            <h3>Layers</h3>
+            <div id="layer-list"></div>
+        </div>
+        <div id="info-button" class="map-button">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <div id="info-panel">
+            <div id="info-header">
+                <h3>About This Map</h3>
+                <button id="close-info" aria-label="Close information panel">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="info-content">
+                <p>This map visualizes walking distance zones around schools in Ulaanbaatar, Mongolia.</p>
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>School locations: Ulaanbaatar Education Department (2023)</li>
+                    <li>Walking distance analysis: Calculated using OSM road network</li>
+                    <li>Base maps: OpenStreetMap contributors</li>
+                </ul>
+                <h4>Map Author</h4>
+                <p>Urban Planning Department</p>
+                <h4>Last Updated</h4>
+                <p>July 2023</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#map-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+}
+
+#title h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+#legend {
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 0.9em;
+}
+
+#legend h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.8;
+    border-radius: 3px;
+}
+
+#legend div {
+    margin-bottom: 5px;
+}
+
+#layer-control {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 200px;
+}
+
+#layer-control h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#layer-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.layer-item {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.layer-item input {
+    margin-right: 8px;
+}
+
+.leaflet-control-zoom {
+    margin-right: 220px !important;
+}
+
+/* School icon and popup styles */
+.school-marker {
+    background: none;
+    border: none;
+}
+
+.school-marker i {
+    font-size: 10px;
+    color: #5E2C5E;
+    text-shadow: 0 0 3px white;
+}
+
+.school-popup {
+    min-width: 200px;
+}
+
+.school-popup h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #5E2C5E;
+}
+
+.school-popup p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.school-popup i {
+    width: 15px;
+    text-align: center;
+    margin-right: 5px;
+    color: #5E2C5E;
+}
+
+/* Info panel styles (moved to top right) */
+.map-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.map-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+#info-panel {
+    position: absolute;
+    top: 130px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 15px;
+    display: none;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+#info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#info-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+#close-info {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #555;
+}
+
+#close-info:hover {
+    color: #FF6B6B;
+}
+
+#info-content h4 {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+#info-content p, #info-content ul {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+#info-content ul {
+    padding-left: 20px;
+}
+
+/* Distance polygon styles */
+.distance-5min {
+    fill-color: #FF6B6B;
+    fill-opacity: 0.7;
+    stroke: #FF6B6B;
+    stroke-width: 1;
+}
+
+.distance-10min {
+    fill-color: #FFA36B;
+    fill-opacity: 0.7;
+    stroke: #FFA36B;
+    stroke-width: 1;
+}
+
+.distance-15min {
+    fill-color: #FFD56B;
+    fill-opacity: 0.7;
+    stroke: #FFD56B;
+    stroke-width: 1;
+}
+
+.distance-20min {
+    fill-color: #A3D8A3;
+    fill-opacity: 0.7;
+    stroke: #A3D8A3;
+    stroke-width: 1;
+}
