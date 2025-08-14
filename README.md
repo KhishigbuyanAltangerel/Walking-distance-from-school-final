@@ -212,7 +212,7 @@ Implementation:
         </div>
 
 ## Live Demo
-[View the live map here](http://127.0.0.1:3000/index.html) 
+[View the live map here]([http://127.0.0.1:3000/index.html](https://khishigbuyanaltangerel.github.io/Walking-distance-from-school-final/)) 
 
 ## Technologies Used
 - [Leaflet.js](https://leafletjs.com/)
